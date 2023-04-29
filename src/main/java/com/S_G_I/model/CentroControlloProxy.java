@@ -5,7 +5,7 @@ public class CentroControlloProxy implements CentroControlloInterface{
 	private CentroControlloInterface centrocontrollointerface;
 
 	public CentroControlloProxy() {
-		centrocontrollointerface = CentroControlloFactory.createCentroControllo();
+		centrocontrollointerface = CentroControlloFactory.creaCentroControllo();
 	}
 	
 	@Override

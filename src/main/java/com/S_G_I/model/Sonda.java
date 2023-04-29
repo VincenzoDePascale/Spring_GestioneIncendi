@@ -1,8 +1,12 @@
 package com.S_G_I.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Sonda extends Subject {
 
 	private Long id;
@@ -10,7 +14,7 @@ public class Sonda extends Subject {
 	private double longitudine;
 	private int smokeLevel = 0;
 	
-	public final int SMOKE_THESHOLD = 5;
+	public final int limiteFumo = 5;
 	
 	public Sonda (Long id, double latitudine, double longitudine ) {
 		this.id = id;
@@ -25,7 +29,7 @@ public class Sonda extends Subject {
 	public void setSmokeLevel(int smokeLevel) {
 		this.smokeLevel = smokeLevel;
 		
-		if (smokeLevel > SMOKE_THESHOLD) {
+		if (smokeLevel > limiteFumo) {
 			super.notifyObservers();
 		}
 	}
